@@ -7,7 +7,7 @@ const Inventario = () => {
 
   // Cargar productos desde el backend
   useEffect(() => {
-    fetch('https://botica-backend-j3dy.onrender.com/api/inventario')
+    fetch('https://botica-backend-d1gn.onrender.com/api/inventario')
       .then(res => res.json())
       .then(data => setProductos(data))
       .catch(err => console.error('Error al cargar productos:', err));
@@ -21,7 +21,7 @@ const Inventario = () => {
       vencimiento: nuevoProducto.vencimiento.replace(/-/g, '/')
     };
 
-    fetch('https://botica-backend-j3dy.onrender.com/api/inventario', {
+    fetch('https://botica-backend-d1gn.onrender.com/api/inventario', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(productoFormateado)
@@ -36,7 +36,7 @@ const Inventario = () => {
   };
 
   const eliminarProducto = (id) => {
-    fetch(`https://botica-backend-j3dy.onrender.com/api/inventario/${id}`, {
+    fetch(`https://botica-backend-d1gn.onrender.com/api/inventario/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
